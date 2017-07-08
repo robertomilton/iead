@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <h2>{{ person.nome }}</h2>
+  <div class="col-sm-12">
+    <ul class="list-group">
+      <li><b>Data de Consagração:</b> {{ person.data_consagracao }}</li>
+      <li><b>Data de Apresentação:</b> {{ person.data_apresentacao }}</li>
+      <li><b>Local:</b> {{ person.local }}</li>
+      <li><b>Cartão:</b> {{ person.cartao }}</li>
+      <li><b>Função:</b> {{ person.funcao }}</li>
+      <li><b>Nome do Pai:</b> {{ person.nome_pai }}</li>
+      <li><b>Nome da Mãe:</b> {{ person.nome_mae }}</li>
+      <li><b>Data de Nascimento:</b> {{ person.data_nascimento }}</li>
+      <li><b>Naturalidade:</b> {{ person.naturalidade }}</li>
+      <li><b>Estado de Nascimento:</b> {{ person.estado_nascimento }}</li>
+      <li><b>País de Nascimento:</b> {{ person.pais_nascimento }}</li>
+      <li><b>Estado Civil:</b> {{ person.get_estado_civil_display }}</li>
+      <li><b>RG:</b> {{ person.rg }}</li>
+      <li><b>CPF:</b> {{ person.cpf }}</li>
+      <li><b>Escolaridade:</b> {{ person.get_escolaridade_display }}</li>
+      <li><b>Profissão:</b> {{ person.profissao }}</li>
+      <li><b>Data de Batismo:</b> {{ person.data_batismo }}</li>
+      <li><b>Igreja / Cidade:</b> {{ person.igreja_cidade }}</li>
+      <li><b>Admitido:</b> {{ person.get_admitido_display }}</li>
+      <li><b>Data de Admissão:</b> {{ person.data_admissao }}</li>
+      <li><b>Endereço:</b> {{ person.endereco }}</li>
+      <li><b>Bairro:</b> {{ person.bairro }}</li>
+      <li><b>Cidade:</b> {{ person.cidade }}</li>
+      <li><b>Estado:</b> {{ person.estado }}</li>
+      <li><b>CEP:</b> {{ person.cep }}</li>
+      <li><b>E-mail:</b> {{ person.email }}</li>
+      <li><b>Fone:</b> {{ person.fone }}</li>
+      <li><b>Celular:</b> {{ person.celular }}</li>
+    </ul>
+  </div>
+
+{% endblock content %}

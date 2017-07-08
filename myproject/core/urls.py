@@ -3,5 +3,6 @@ from myproject.core import views
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
-    url(r'^persons/$', views.person_list, name='persons'),
+    url(r'^person/$', views.person_list, name='person_list'),
+    url(r'^person/(?P<pk>\d+)/$', views.person_detail, name='person_detail'),
 ]

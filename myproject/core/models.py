@@ -9,12 +9,12 @@ CIVIL = (
 )
 
 ESCOLARIDADE = (
-    ('efi', 'ensino fundamental incompleto'),
-    ('efc', 'ensino fundamental completo'),
-    ('emi', 'ensino médio incompleto'),
-    ('emc', 'ensino médio completo'),
-    ('esi', 'ensino superior incompleto'),
-    ('esc', 'ensino superior completo'),
+    ('efi', 'Ensino Fundamental Incompleto'),
+    ('efc', 'Ensino Fundamental Completo'),
+    ('emi', 'Ensino Médio Incompleto'),
+    ('emc', 'Ensino Médio Completo'),
+    ('esi', 'Ensino Superior Incompleto'),
+    ('esc', 'Ensino Superior Completo'),
     ('ou', 'outros'),
     ('ind', 'indefinido'),
 )
