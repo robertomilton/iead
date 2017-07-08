@@ -3,6 +3,7 @@
 {% block content %}
   <!-- search form -->
   <form class="navbar-form navbar-right" action="." method="GET">
+    <a class="btn btn-primary btn-large" href="{% url 'core:person_add' %}">Cadastrar</a>
     <input id="search_box" name="search_box" type="text" placeholder="Buscar..." class="form-control">
     <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
   </form>
