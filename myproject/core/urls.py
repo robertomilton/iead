@@ -5,4 +5,5 @@ urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^person/$', views.person_list, name='person_list'),
     url(r'^person/(?P<pk>\d+)/$', views.person_detail, name='person_detail'),
+    url(r'^person/add/$', views.person_create, name='person_add'),
 ]

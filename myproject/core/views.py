@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from .models import Person
+from .forms import PersonForm
 
 
 def home(request):
@@ -21,3 +23,15 @@ def person_detail(request, pk):
     person = Person.objects.get(pk=pk)
     ctx = {'person': person}
     return render(request, 'core/person_detail.html', ctx)
+
+
+def person_create(request):
+    if request.method == 'POST':
+        form = PersonForm(request.POST)
+        if form.is_valid():
+            obj = form.save()
+            return HttpResponseRedirect('/person/%d/' % obj.pk)
+    else:
+        form = PersonForm()
+    ctx = {'form': form}
+    return render(request, 'core/person_add.html', ctx)
