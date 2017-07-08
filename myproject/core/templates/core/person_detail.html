@@ -2,6 +2,7 @@
 
 {% block content %}
 
+  <a class="btn btn-success btn-large pull-right" href="{% url 'core:person_update' pk=person.pk %}">Editar</a>
   <h2>{{ person.nome }}</h2>
   <div class="col-sm-12">
     <ul class="list-group">

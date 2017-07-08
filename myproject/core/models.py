@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import resolve_url
 from localflavor.br.br_states import STATE_CHOICES
 
 CIVIL = (
@@ -81,3 +82,6 @@ class Person(models.Model):
     def __str__(self):
         ''' Retorna a pessoa ao invés de Person object '''
         return self.nome
+
+    def get_absolute_url(self):
+        return resolve_url('core:person_detail', pk=self.pk)

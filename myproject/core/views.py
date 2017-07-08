@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.views.generic.edit import UpdateView
 from .models import Person
 from .forms import PersonForm
 
@@ -34,4 +35,9 @@ def person_create(request):
     else:
         form = PersonForm()
     ctx = {'form': form}
-    return render(request, 'core/person_add.html', ctx)
+    return render(request, 'core/person_form.html', ctx)
+
+
+class PersonUpdate(UpdateView):
+    model = Person
+    form_class = PersonForm
