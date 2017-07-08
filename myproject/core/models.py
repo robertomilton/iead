@@ -68,6 +68,7 @@ class Person(models.Model):
     estado = models.CharField(
         'UF', max_length=2, choices=STATE_CHOICES, default='SP', null=True, blank=True)
     cep = models.CharField(max_length=9, null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)
     fone = models.CharField(max_length=14, null=True, blank=True)
     celular = models.CharField(max_length=14, null=True, blank=True)
     # foto
