@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <!-- search form -->
+  <form class="navbar-form navbar-right" action="." method="GET">
+    <input id="search_box" name="search_box" type="text" placeholder="Buscar..." class="form-control">
+    <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
+  </form>
+
   <table class="table">
     <thead>
         <tr>
