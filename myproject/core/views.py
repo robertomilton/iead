@@ -1,3 +1,5 @@
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.views.generic.edit import UpdateView
@@ -9,6 +11,7 @@ def home(request):
     return render(request, 'core/index.html')
 
 
+@login_required
 def person_list(request):
     ''' Uma view de todas as pessoas. '''
     persons = Person.objects.all()
@@ -19,6 +22,7 @@ def person_list(request):
     return render(request, 'core/person_list.html', ctx)
 
 
+@login_required
 def person_detail(request, pk):
     ''' Uma view dos detalhes de cada pessoa '''
     person = Person.objects.get(pk=pk)
@@ -26,6 +30,7 @@ def person_detail(request, pk):
     return render(request, 'core/person_detail.html', ctx)
 
 
+@login_required
 def person_create(request):
     if request.method == 'POST':
         form = PersonForm(request.POST)
@@ -38,6 +43,6 @@ def person_create(request):
     return render(request, 'core/person_form.html', ctx)
 
 
-class PersonUpdate(UpdateView):
+class PersonUpdate(LoginRequiredMixin, UpdateView):
     model = Person
     form_class = PersonForm
