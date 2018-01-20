@@ -3,6 +3,7 @@ from .models import Person
 
 
 class PersonForm(forms.ModelForm):
+    pais_nascimento = forms.CharField(initial='Brasil')
 
     class Meta:
         model = Person
